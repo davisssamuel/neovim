@@ -7,15 +7,6 @@ return {
 			keymap = { preset = "default" },
 			appearance = { nerd_font_variant = "mono" },
 			signature = { enabled = true },
-			-- sources = {
-			-- 	providers = {
-			-- 		markdown = {
-			-- 			name = 'RenderMarkdown',
-			-- 			module = 'render-markdown.integ.blink',
-			-- 			fallbacks = { 'lsp' },
-			-- 		},
-			-- 	}
-			-- }
 		})
 	end
 }

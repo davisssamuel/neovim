@@ -3,7 +3,7 @@ vim.o.wrap = false
 vim.o.number = true
 vim.o.cursorline = true
 vim.o.splitright = true
-vim.o.winborder = "none"
+vim.o.winborder = "rounded"
 vim.o.signcolumn = "yes"
 
 -- Indentation
