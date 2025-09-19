@@ -9,20 +9,12 @@ return {
 			}
 		})
 
-		-- vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "#444C56" })
-		-- vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#444C56", bg = "#444C56" })
-		-- vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#444C56", bg = "#444C56" })
-		-- vim.api.nvim_set_hl(0, "BlinkCmpScrollBarThumb", { bg = "#444C56" })
-
 		local hl_groups = {
 			"BlinkCmpMenu",
 			"BlinkCmpMenuBorder",
 			"BlinkCmpDocBorder",
 			"BlinkCmpScrollBarThumb",
 			"FloatBorder",
-			-- "FzfLuaBorder",
-			-- "FzfLuaFzfBorder",
-			-- "FzfLuaPreviewBorder",
 			"LazyNormal",
 			"NormalFloat",
 		}
@@ -36,7 +28,7 @@ return {
 			end
 		end
 
-		-- Set colors for floating windows for Oil 
+		-- Set colors for floating windows (Oil) 
 		vim.api.nvim_win_set_option(0, "winhighlight", "NormalFloat:Normal,FloatBorder:FloatBorder")
 		vim.cmd.colorscheme("github_dark_dimmed")
 	end,
