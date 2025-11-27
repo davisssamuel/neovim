@@ -4,9 +4,7 @@ return {
 		require("fzf-lua").register_ui_select()
 		require("fzf-lua").setup({
 			"border-fused",
-			winopts = {
-				title_flags = false,
-			},
+			winopts = { title_flags = false, },
 			hls = {
 				border = "FloatBorder",
 				preview_border = "FloatBorder",
