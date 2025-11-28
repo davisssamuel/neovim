@@ -2,13 +2,14 @@ return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
 		local custom_theme = require("lualine.themes.auto")
-		local custom_bg = "#22272E"
+		local custom_bg = "#FFFFFF"
 		custom_theme.normal.c.bg = custom_bg
 		custom_theme.insert.c.bg = custom_bg
 		custom_theme.visual.c.bg = custom_bg
 		custom_theme.replace.c.bg = custom_bg
 		custom_theme.command.c.bg = custom_bg
 		custom_theme.inactive.c.bg = custom_bg
+
 		require("lualine").setup({
 			options = {
 				theme = custom_theme,
@@ -16,6 +17,7 @@ return {
 				component_separators = "",
 				globalstatus = true,
 			},
+
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", },

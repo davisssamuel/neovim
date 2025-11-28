@@ -2,7 +2,16 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- LSP keybinds
-map({ "n", "v" }, "<leader>f", vim.lsp.buf.format, { desc = "Format current buffer" })
+map({ "n", "v" }, "<leader>f", function()
+	if vim.fn.mode() == "v" or vim.fn.mode() == "V" then
+		vim.lsp.buf.format({
+			range = { vim.fn.getpos("v"), vim.fn.getpos(".") },
+		})
+	else
+		vim.lsp.buf.format()
+	end
+end, { desc = "Format current buffer or selection" })
+
 map({ "n", "v" }, "<leader>r", vim.lsp.buf.rename, { desc = "Rename current symbol" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Perform a code action" })
 
@@ -20,18 +29,14 @@ map({ "n", "v" }, "<C-j>", "<CMD>wincmd j<CR>", {})
 map({ "n", "v" }, "<C-k>", "<CMD>wincmd k<CR>", {})
 map({ "n", "v" }, "<C-l>", "<CMD>wincmd l<CR>", {})
 
--- Oil keybinds
+-- Oil keymaps 
 map("n", "-", "<CMD>Oil<CR>", {})
 
--- Telescope keybinds
+-- FzfLua keymaps 
 map("n", "<C-p>", function()
 	require("fzf-lua").files()
-end, {})
+end, { desc = "Search files" })
 
 map("n", "<C-f>", function()
 	require("fzf-lua").grep_curbuf()
-end, {})
-
--- map("n", "<leader>ca", function()
--- 	require("fzf-lua").lsp_code_actions()
--- end, {})
+end, { desc = "Search current buffer" })
