@@ -40,7 +40,7 @@ return {
 			"NormalFloat",
 		}
 
-		-- Iterate through highlight groups and set background and border colors
+		-- Iterate through highlight groups and set background/border colors
 		for _, group in ipairs(hl_groups) do
 			if group:match("Border$") then
 				vim.api.nvim_set_hl(0, group, { fg = colors.light.border, bg = colors.light.bg })

@@ -9,6 +9,7 @@ return {
 		custom_theme.replace.c.bg = custom_bg
 		custom_theme.command.c.bg = custom_bg
 		custom_theme.inactive.c.bg = custom_bg
+
 		require("lualine").setup({
 			options = {
 				theme = custom_theme,

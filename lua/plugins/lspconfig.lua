@@ -6,7 +6,7 @@ return {
 			"nixd",
 		})
 
-		-- Add LSP capabilities to blink for every language server
+		-- Add capabilities to blink.cmp for every language server
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 		vim.lsp.config("*", {
 			capabilities = capabilities,
