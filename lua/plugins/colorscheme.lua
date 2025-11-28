@@ -4,11 +4,10 @@ return {
 	priority = 1000,
 	config = function()
 		require("github-theme").setup({
-			options = {
-				transparent = true,
-			}
+			options = { transparent = true },
 		})
 
+		-- TODO: finish defining colors
 		local colors = {
 			default = {
 				fg = "",
@@ -31,10 +30,12 @@ return {
 		}
 
 		local hl_groups = {
+			"BlinkCmpDetail",
+			"BlinkCmpDocBorder",
+			"BlinkCmpLabelDescription",
+			"BlinkCmpLabelDetail",
 			"BlinkCmpMenu",
 			"BlinkCmpMenuBorder",
-			"BlinkCmpDocBorder",
-			"BlinkCmpScrollBarThumb",
 			"FloatBorder",
 			"LazyNormal",
 			"NormalFloat",
@@ -51,9 +52,9 @@ return {
 
 		-- Set colors for oil.nvim floating windows
 		vim.api.nvim_win_set_option(0, "winhighlight", "NormalFloat:Normal,FloatBorder:FloatBorder")
-		vim.api.nvim_set_hl(0, "CursorLine", { bg = colors.light.cursor })
-		vim.api.nvim_set_hl(0, "BlinkCmpScrollBarThumb", { fg = colors.border })
 
+		-- Set cursorline and enable colorscheme
+		vim.api.nvim_set_hl(0, "CursorLine", { bg = colors.light.cursor })
 		vim.cmd.colorscheme("github_light")
 	end,
 }
